@@ -9,6 +9,4 @@ let m: linalg.Matrix = linalg.matrix(
 
 console.log(m)
 
-console.log(linalg.transforms.scaleRow(m, 0, 10))
-console.log(linalg.transforms.addRows(m, 1, 2))
-console.log(linalg.transforms.swapRows(m, 2, 3))
+console.log(linalg.transforms.rref(m))

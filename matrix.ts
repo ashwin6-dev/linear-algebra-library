@@ -21,28 +21,6 @@ export class Matrix {
         return this.value[n]
     }
 
-    rref(): Matrix {
-        let newRows: number[][] = this.value.sort((a, b) => utils.leadingZeros(a) - utils.leadingZeros(b))
-        let top: number = 0
-
-        while (top < this.rows) {
-            let topRow: number[] = newRows[top]
-            let pivotPos: number = utils.leadingZeros(topRow)
-            let pivot: number = topRow[pivotPos]
-
-            for (let rowIndex = top + 1; rowIndex < this.rows; rowIndex++) {
-                let currRow = newRows[rowIndex]
-                let scale = -currRow[pivotPos] / pivot
-
-                newRows[rowIndex] = utils.addArrays(currRow, topRow.map(v => scale * v))
-            }
-
-            top++
-        }
-
-        return matrix(newRows)
-    }
-
     shape(): number[] {
         return [this.rows, this.cols]
     }
