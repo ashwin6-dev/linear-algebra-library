@@ -1,24 +1,8 @@
-import * as utils from "./utils"
+import { matrix, Matrix } from "./matrix"
+import * as transforms from "./transforms"
 
-export class Matrix {
-    private value: number[][];
-    private rows: number;
-    private cols: number;
-
-    constructor(value: number[][]) {
-        utils.assert(utils.isRectangular(value), "provided 2D array must be rectangular")
-
-        this.value = value
-        this.rows = value.length
-        this.cols = value[0].length
-    }
-
-    shape(): number[] {
-        return [this.rows, this.cols]
-    }
-}
-
-
-export const matrix = (value: number[][]): Matrix => {
-    return new Matrix(value)
+export { 
+    matrix,
+    Matrix,
+    transforms
 }

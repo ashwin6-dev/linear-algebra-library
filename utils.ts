@@ -22,3 +22,19 @@ export const isRectangular = (array: number[][]): boolean => {
 
     return true
 }
+
+export const leadingZeros = (row: number[]): number => {
+    let count: number = 0
+
+    while (row[count] == 0) {
+        count += 1
+    }
+
+    return count
+}
+
+export const addArrays = (arrA: number[], arrB: number[]): number[] => {
+    assert(arrA.length == arrB.length, "cannot add arrays of different length")
+
+    return arrA.map((value, index) => value + arrB[index])
+}
