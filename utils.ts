@@ -38,3 +38,13 @@ export const addArrays = (arrA: number[], arrB: number[]): number[] => {
 
     return arrA.map((value, index) => value + arrB[index])
 }
+
+export const findIndex = (arr: any[], predicate: (p: any) => boolean): number => {
+    for (let i = 0; i < arr.length; i++) {
+        let curr: any = arr[i]
+
+        if (predicate(curr)) return i
+    }
+
+    return -1
+}
